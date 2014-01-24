@@ -31,7 +31,7 @@ define([
         // The contract here is that the interactive module MUST return an object
         // with a method called 'boot'.
 
-        require(bootUrl, function (interactive) {
+        require([bootUrl], function (interactive) {
             // We pass the standard context and config here, but also inject the
             // mediator so the external interactive can respond to our events.
             interactive.boot(element, context, config, mediator);
