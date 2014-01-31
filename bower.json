@@ -1,0 +1,24 @@
+{
+  "name": "enhancer",
+  "main": "enhancer.js",
+  "version": "0.1.2",
+  "homepage": "https://github.com/guardian/enhancer",
+  "authors": [
+    "Sébastien Cevey <seb.cevey@guardian.co.uk>"
+  ],
+  "description": "Utility to run progressive enhancement boot.js scripts",
+  "keywords": [
+    "iframe",
+    "embed",
+    "progressive",
+    "enhancement"
+  ],
+  "license": "Apache 2",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
