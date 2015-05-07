@@ -1,7 +1,7 @@
 {
   "name": "enhancer",
   "main": "enhancer.js",
-  "version": "0.1.2",
+  "version": "0.1.4",
   "homepage": "https://github.com/guardian/enhancer",
   "authors": [
     "Sébastien Cevey <seb.cevey@guardian.co.uk>"
