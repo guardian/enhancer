@@ -1,5 +1,9 @@
-define(function (
+define([
+    'require'
+], function (
+    require
 ) {
+
     /**
      * Render a DOM Node that supports progressive enhancement via a
      * boot.js script.
