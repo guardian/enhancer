@@ -23,7 +23,12 @@ define([
         require([bootUrl], function (interactive) {
             // We pass the standard context and config here, but also inject the
             // mediator so the external interactive can respond to our events.
-            interactive.boot(element, context, config, mediator);
+            interactive.boot(element, {
+                context: context,
+                config: config,
+                mediator: mediator,
+                self: bootUrl
+            });
         });
     }
 
