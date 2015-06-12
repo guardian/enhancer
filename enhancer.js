@@ -14,6 +14,7 @@ define([
      * @param {Mediator} mediator A pub/sub object to listen to and emit global events to the page.
      */
     function render(element, context, config, mediator) {
+        config = config || {};
 
         var bootUrl = element.getAttribute('data-interactive');
 
