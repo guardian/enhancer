@@ -14,8 +14,24 @@ define([
      * @param {Mediator} mediator A pub/sub object to listen to and emit global events to the page.
      */
     function render(element, context, config, mediator) {
+        config = config || {};
 
         var bootUrl = element.getAttribute('data-interactive');
+        var bootUrlDir = bootUrl.slice(0, bootUrl.lastIndexOf('/'));
+
+        // Poor man's clone...
+        var configCopy = {};
+        for (var k in config) {
+          if (config.hasOwnProperty(k)) {
+            configCopy[k] = config[k];
+          }
+        }
+
+        // Inject some config about the current invocation context
+        configCopy.enhancerContext = {
+          bootUrl:    bootUrl,
+          bootUrlDir: bootUrlDir
+        };
 
         // The contract here is that the interactive module MUST return an object
         // with a method called 'boot'.
@@ -23,7 +39,7 @@ define([
         require([bootUrl], function (interactive) {
             // We pass the standard context and config here, but also inject the
             // mediator so the external interactive can respond to our events.
-            interactive.boot(element, context, config, mediator);
+            interactive.boot(element, context, configCopy, mediator);
         });
     }
 
