@@ -17,6 +17,7 @@ define([
         config = config || {};
 
         var bootUrl = element.getAttribute('data-interactive');
+        var bootUrlDir = bootUrl.slice(0, bootUrl.lastIndexOf('/'));
 
         // Poor man's clone...
         var configCopy = {};
@@ -28,7 +29,8 @@ define([
 
         // Inject some config about the current invocation context
         configCopy.enhancerContext = {
-          bootUrl: bootUrl
+          bootUrl:    bootUrl,
+          bootUrlDir: bootUrlDir
         };
 
         // The contract here is that the interactive module MUST return an object
